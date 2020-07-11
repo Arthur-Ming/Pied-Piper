@@ -33,7 +33,10 @@ body {
 }
 
 /*-----------------------------header------------------------------------ */
-
+#h {
+	position: absolute;
+	top: 0px;
+}
 .header {
 	position: fixed;
 	width: 100%;
@@ -120,6 +123,7 @@ body {
 		width: 30px;
 		height: 20px;
 		z-index: 6;
+		cursor: pointer;
 	}
 	.header__burger:before,
 	.header__burger:after {
@@ -175,7 +179,7 @@ body {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: #333333;
+		background-color: #007765;
 		padding: 40px 0 0 0;
 	}
 	.header__menu.active {
@@ -185,6 +189,7 @@ body {
 	.header__list {
 		flex-direction: column;
 	}
+
 	.header__list span {
 		display: none;
 	}
@@ -205,7 +210,7 @@ body {
 
 .jumbotron {
 	min-height: 403px;
-	background: url("images/image-8.png");
+	background: url("images/image-8.png") center no-repeat;
 	margin-top: 84px;
 	margin-bottom: -84px;
 	display: flex;
@@ -287,7 +292,7 @@ body {
 
 .hero {
 	min-height: 483px;
-	background: url("images/image-9.png");
+	background: url("images/image-9.png") center no-repeat;
 	margin-bottom: -84px;
 	display: flex;
 	justify-content: center;
