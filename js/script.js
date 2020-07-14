@@ -16,20 +16,24 @@ document.querySelector('.header__burger').onclick = active;
 document.querySelector('.header__list').onclick = function (event) {
 
 	event.preventDefault();
-	let target = event.target;
 
-	if (target.className != 'header__link') return;
+	document.querySelector(event.target.getAttribute('href')).scrollIntoView({ block: "start", behavior: "smooth" });
+
+	if (document.documentElement.clientWidth > 768) return;
+
+	if (event.target.className != 'header__link') return;
 
 	active();
 
 
-	document.querySelector(target.getAttribute('href')).scrollIntoView({ block: "start", behavior: "smooth" });
+	
 }
 
 document.querySelector('.header__logo').onclick = function (event) {
 
 	event.preventDefault();
 	document.querySelector("#h").scrollIntoView({ block: "start", behavior: "smooth" });
+	
 }
 
 
