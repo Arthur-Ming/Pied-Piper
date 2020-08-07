@@ -210,7 +210,7 @@ body {
 
 .jumbotron {
 	min-height: 403px;
-	background: url("images/image-8.png") center no-repeat;
+	background: url("images/image-8.png") ;
 	margin-top: 84px;
 	margin-bottom: -84px;
 	display: flex;
@@ -292,7 +292,7 @@ body {
 
 .hero {
 	min-height: 483px;
-	background: url("images/image-9.png") center no-repeat;
+	background: url("images/image-9.png") ;
 	margin-bottom: -84px;
 	display: flex;
 	justify-content: center;
