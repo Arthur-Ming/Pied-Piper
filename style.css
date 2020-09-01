@@ -12,34 +12,28 @@ body {
 	font-family: "Roboto", sans-serif;
 	margin: auto;
 }
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+}
 .container {
-	max-width: 1219px;
-	margin: 0 auto;
-}
-@media screen and (min-width: 2121px) {
-	.container {
-		max-width: 2011px;
-	}
-}
-.content {
 	max-width: 1219px;
 	margin: 0 auto;
 	padding: 0 55px 0 55px;
 }
-@media (max-width: 767px) {
-	.content {
+@media (max-width: 970px) {
+	.container {
 		padding: 0 20px 0 20px;
 	}
 }
 
 /*-----------------------------header------------------------------------ */
-#h {
-	position: absolute;
-	top: 0px;
-}
+
 .header {
 	position: fixed;
 	width: 100%;
+	height: 84px;
+	background-color: #007765;
 	top: 0;
 	left: 0;
 	z-index: 50;
@@ -49,26 +43,12 @@ body {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-	height: 84px;
 	z-index: 10;
-}
-.header__body:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: #007765;
-	height: 100%;
-	z-index: 2;
 }
 
 .header__logo {
 	position: relative;
-	margin: 20px 0 0 55px;
-	flex: 0 0 184px;
-	/*width: 184px;*/
-	overflow: hidden;
+	margin: 20px 0 0 0;
 	z-index: 3;
 }
 .header__logo img {
@@ -79,7 +59,7 @@ body {
 	display: flex;
 	position: relative;
 	z-index: 3;
-	padding: 28px 55px 0 0;
+	padding: 28px 0 0 0;
 }
 .header__list li {
 	list-style: none;
@@ -91,35 +71,28 @@ body {
 	font-weight: 500;
 	font-size: 24px;
 	line-height: 28px;
-	/*text-align: center;*/
 	color: #ffffff;
 	text-decoration: none;
-}
-@media screen and (min-width: 2121px) {
-	.header__logo {
-		margin: 20px 0 0 451px;
-	}
-	.header__list {
-		padding: 28px 451px 0 0;
-	}
 }
 
 @media (max-width: 767px) {
 	body.lock {
 		overflow: hidden;
 	}
-	.header__body {
+	.header {
 		height: 50px;
+	}
+	.header__body {
 		align-items: center;
 	}
 	.header__logo {
-		margin: 5px 0 0 20px;
+		margin: 10px 0 0 0;
 		flex: 0 0 140px;
 	}
 
 	.header__burger {
 		position: relative;
-		margin: 5px 20px 0 0;
+		margin: 5px 0 0 0;
 		width: 30px;
 		height: 20px;
 		z-index: 6;
@@ -210,9 +183,8 @@ body {
 
 .jumbotron {
 	min-height: 403px;
-	background: url("images/image-8.png") ;
+	background: url("images/image-8.png") 0 0 / cover no-repeat;
 	margin-top: 84px;
-	margin-bottom: -84px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -229,13 +201,21 @@ body {
 
 @media screen and (max-width: 767px) {
 	.jumbotron {
-		margin-bottom: -50px;
 		margin-top: 50px;
 		min-height: 282px;
 	}
 	.jumbotron p {
 		font-size: 50px;
 		line-height: 59px;
+	}
+}
+@media screen and (max-width: 425px) {
+	.jumbotron {
+		min-height: 200px;
+	}
+	.jumbotron p {
+		font-size: 36px;
+		line-height: 42px;
 	}
 }
 /*---------------------------The Problem------------------------------------- */
@@ -259,11 +239,6 @@ body {
 	font-weight: normal;
 	font-size: 32px;
 	line-height: 37px;
-	margin: 0;
-}
-
-#problem {
-	padding: 0 0 84px 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -280,20 +255,22 @@ body {
 		line-height: 26px;
 		text-align: justify;
 	}
-
 	.problem {
 		min-height: 503px;
 	}
-	#problem {
-		padding: 0 0 50px 0;
+}
+@media screen and (max-width: 425px) {
+	.problem__title {
+		font-size: 36px;
+		line-height: 42px;
+		padding: 20px 0 16px 0;
 	}
 }
 /*---------------------------Hero------------------------------------------*/
 
 .hero {
 	min-height: 483px;
-	background: url("images/image-9.png") ;
-	margin-bottom: -84px;
+	background: url("images/image-9.png");
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -307,30 +284,29 @@ body {
 	line-height: 56px;
 	text-align: center;
 	color: #ffffff;
-	padding: 0;
 }
-
 @media screen and (max-width: 767px) {
 	.hero {
-		margin-bottom: -50px;
+		min-height: 400px;
 	}
 	.hero__text {
-		padding: 0;
+		font-size: 36px;
+		line-height: 40px;
 	}
 }
-
 @media screen and (max-width: 425px) {
+	.hero {
+		min-height: 360px;
+	}
 	.hero__text {
-		font-size: 34px;
-		line-height: 39px;
+		font-size: 28px;
+		line-height: 32px;
 	}
 }
 /*---------------------------Introducing PiedPiperCoin------------------------------------------*/
 
 .pied-piper-coin {
 	min-height: 604px;
-	margin: 0 0 -84px 0;
-	max-width: 1219px;
 }
 .pied-piper-coin__title {
 	font-style: normal;
@@ -362,14 +338,8 @@ body {
 	margin: 0;
 	padding: 0 0 40px 0;
 }
-#PiedPiperCoin {
-	padding: 0 0 84px 0;
-}
 
 @media screen and (max-width: 767px) {
-	.pied-piper-coin {
-		margin: 0 0 -50px 0;
-	}
 	.pied-piper-coin__title {
 		font-size: 45px;
 		line-height: 53px;
@@ -380,9 +350,6 @@ body {
 
 	.pied-piper-coin__text p {
 		padding: 0 0 20px 0;
-	}
-	#PiedPiperCoin {
-		padding: 0 0 50px 0;
 	}
 }
 
@@ -455,9 +422,6 @@ body {
 	font-size: 18px;
 	line-height: 22px;
 }
-#TheTeam {
-	padding: 0 0 84px 0;
-}
 
 @media screen and (max-width: 767px) {
 	.team {
@@ -469,9 +433,6 @@ body {
 	}
 	.team__profile {
 		flex-basis: 50%;
-	}
-	#TheTeam {
-		padding: 0 0 50px 0;
 	}
 }
 
