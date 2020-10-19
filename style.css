@@ -74,7 +74,12 @@ body {
 	color: #ffffff;
 	text-decoration: none;
 }
-
+.header__link:hover {
+	text-decoration: underline;
+}
+.act {
+	color: #ddd;
+}
 @media (max-width: 767px) {
 	body.lock {
 		overflow: hidden;

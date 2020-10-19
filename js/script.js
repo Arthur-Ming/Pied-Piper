@@ -1,10 +1,3 @@
-/*$(document).ready(function() {
-	$('.header__burger').click(function(event) {
-		$('.header__burger, .header__menu').toggleClass('active');
-		$('body').toggleClass('lock')
-	});
-});  */
-
 $(document).ready(function () {
 
 	$('.header__burger').click(function (event) {
@@ -42,6 +35,25 @@ $(document).ready(function () {
 });
 
 
+function idMarkScroll(...ids) {
+	for (let id of ids) {
+		let dest = 'a[href=' + '"' + id + '"' + ']';
+
+		if ($('html').scrollTop() + 84 >= $(id).offset().top && $('html').scrollTop() + 84 < $(id).offset().top + $(id).innerHeight()) {
+
+			$(dest).addClass("act");
+		}
+		else {
+			$(dest).removeClass("act");
+		}
+	}
+}
+
+$(window).on('scroll', function () {
+	if ($(window).width() > 767)
+		idMarkScroll('#problem', "#PiedPiperCoin", "#TheTeam");
+
+});
 /*
 function active() {
 	document.querySelector('.header__menu').classList.toggle("active");
@@ -52,12 +64,12 @@ function active() {
 document.querySelector('.header__burger').onclick = active;
 document.querySelector('.header__list').onclick = function (event) {
 
-   event.preventDefault();
-   if (event.target.className != 'header__link') return;
+	event.preventDefault();
+	if (event.target.className != 'header__link') return;
 
 	let href = event.target.getAttribute('href');
 
-   if(href !== undefined && href !== '')
+	if(href !== undefined && href !== '')
 		document.querySelector(href).scrollIntoView({ block: "start", behavior: "smooth" });
 
 	if (document.documentElement.clientWidth > 768) return;
